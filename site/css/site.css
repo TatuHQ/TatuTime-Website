@@ -81,7 +81,12 @@ code {
   border-radius: 3px;
 }
 
-.section-ink :focus-visible { outline-color: var(--orange); }
+.section-ink :focus-visible,
+.site-footer :focus-visible,
+.terminal :focus-visible,
+.clone-card :focus-visible { outline-color: var(--orange); }
+
+.section-orange :focus-visible { outline-color: var(--ink); }
 
 .sr-only {
   position: absolute;
