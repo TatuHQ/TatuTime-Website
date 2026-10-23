@@ -1,0 +1,18 @@
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Local preview and deployment scratch
+.env
+*.log
+.cache/
+dist/
+
+# Node is not used by the site; keep stray tooling out.
+node_modules/
+
+# Local TLS state if someone runs Caddy outside Docker
+data/
+config/

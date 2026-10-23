@@ -1,0 +1,29 @@
+services:
+  website:
+    build: .
+    image: ghcr.io/tucanotechnology/tucanotime-website:latest
+    container_name: tucanotime-website
+    restart: unless-stopped
+    environment:
+      # ":80" keeps plain HTTP inside the container; put a reverse proxy in
+      # front. For automatic HTTPS use docker-compose.tls.yml.
+      SITE_ADDRESS: ${SITE_ADDRESS:-:80}
+    ports:
+      # Loopback by default: publish it through your existing proxy.
+      - "127.0.0.1:${SITE_PORT:-8088}:80"
+    read_only: true
+    tmpfs:
+      - /tmp
+    volumes:
+      - caddy-data:/data
+      - caddy-config:/config
+    cap_drop:
+      - ALL
+    cap_add:
+      - NET_BIND_SERVICE
+    security_opt:
+      - no-new-privileges:true
+
+volumes:
+  caddy-data:
+  caddy-config:

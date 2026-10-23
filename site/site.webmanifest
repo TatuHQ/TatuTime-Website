@@ -1,0 +1,13 @@
+{
+  "name": "Tucano Time",
+  "short_name": "Tucano Time",
+  "description": "Free, self-hosted timesheets and invoicing. Your data stays on your hardware.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#f6f0e4",
+  "theme_color": "#f6f0e4",
+  "icons": [
+    { "src": "assets/brand/favicon-32x32.png", "sizes": "32x32", "type": "image/png" },
+    { "src": "assets/brand/favicon-16x16.png", "sizes": "16x16", "type": "image/png" }
+  ]
+}

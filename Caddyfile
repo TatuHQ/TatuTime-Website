@@ -1,0 +1,52 @@
+# Tucano Time — tucanotime.com
+#
+# SITE_ADDRESS controls what Caddy listens on:
+#   :80                plain HTTP (default; put a reverse proxy in front)
+#   tucanotime.com     automatic HTTPS on 80/443 (use docker-compose.tls.yml)
+#
+# The site is pure static files: no backend, no database, no cookies.
+{
+	admin off
+}
+
+{$SITE_ADDRESS::80} {
+	root * /srv
+	encode zstd gzip
+
+	# Clean URLs: /foo serves /foo.html, / serves /index.html.
+	try_files {path} {path}.html {path}/index.html
+	file_server
+
+	# Serve the branded 404 with a real 404 status.
+	handle_errors {
+		@notfound expression {http.error.status_code} == 404
+		rewrite @notfound /404.html
+		file_server
+	}
+
+	header {
+		X-Content-Type-Options "nosniff"
+		X-Frame-Options "DENY"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=()"
+		Cross-Origin-Opener-Policy "same-origin"
+		Content-Security-Policy "default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; manifest-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
+		Strict-Transport-Security "max-age=31536000"
+		-Server
+	}
+
+	# Fingerprint-free static assets are safe to cache for a week. Bump the
+	# query string or rename an asset when replacing it.
+	@assets path /assets/* /css/* /js/* /favicon.ico /site.webmanifest
+	header @assets Cache-Control "public, max-age=604800"
+
+	@documents path / /index.html /404.html
+	header @documents Cache-Control "no-cache"
+}
+
+# Container health probe, never published to the host.
+:8081 {
+	@health path /healthz
+	respond @health "ok" 200
+	respond 404
+}

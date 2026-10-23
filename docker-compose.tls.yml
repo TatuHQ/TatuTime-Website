@@ -1,0 +1,12 @@
+# Automatic HTTPS overlay: Caddy obtains and renews a certificate for the
+# domain. Point the domain's A/AAAA records at this host and publish 80/443.
+#
+#   SITE_ADDRESS=tucanotime.com docker compose \
+#     -f docker-compose.yml -f docker-compose.tls.yml up -d
+services:
+  website:
+    environment:
+      SITE_ADDRESS: ${SITE_ADDRESS:-tucanotime.com}
+    ports:
+      - "80:80"
+      - "443:443"

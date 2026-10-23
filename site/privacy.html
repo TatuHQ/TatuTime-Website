@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy — Tucano Time</title>
+  <meta name="description" content="Tucano Time's website collects nothing: no cookies, no analytics, no telemetry and no external requests.">
+  <link rel="canonical" href="https://tucanotime.com/privacy.html">
+  <meta name="theme-color" content="#f6f0e4">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-32x32.png">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="./" aria-label="Tucano Time — home">
+        <img class="brand-mark" src="assets/brand/tucano.png" alt="" width="223" height="244">
+        <span class="brand-word">Tucano<strong>Time</strong></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <a href="./#features">Features</a>
+        <a href="./#self-host">Self-hosting</a>
+        <a href="./#open-source">Open source</a>
+        <a href="./#faq">FAQ</a>
+        <a class="nav-github" href="https://github.com/TucanoTechnology/TucanoTime" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="legal" id="main">
+    <div class="wrap legal-wrap">
+      <p class="kicker">Privacy</p>
+      <h1>This site collects nothing.</h1>
+      <p class="lede">No cookies. No analytics. No telemetry. No advertising pixels. No third-party fonts or scripts. No contact form quietly posting somewhere. The page you are reading is plain HTML, CSS and a small local JavaScript file.</p>
+
+      <h2>What the website does</h2>
+      <ul>
+        <li>All assets — fonts included — are served from this domain. The page makes no external network requests.</li>
+        <li>No data is stored in your browser: no cookies, no <code>localStorage</code>, no session identifiers.</li>
+        <li>No usage data is sent anywhere. There is no analytics service to send it to.</li>
+        <li>Outbound links (GitHub, documentation) are ordinary links. Nothing is loaded from those sites unless you click one.</li>
+      </ul>
+
+      <h2>Server logs</h2>
+      <p>This site can be served two ways:</p>
+      <ul>
+        <li><strong>GitHub Pages.</strong> GitHub is the host and may process standard request data (such as IP addresses) to deliver the site and protect its service. That processing is governed by GitHub's own privacy statement, not by Tucano Technology.</li>
+        <li><strong>Self-hosted container.</strong> The Caddy configuration in this repository does not enable access logging. If an operator adds a log or puts the site behind a proxy, that operator decides what is recorded.</li>
+      </ul>
+      <p>This page is static, so there is no account, no comment box and no newsletter to unsubscribe from.</p>
+
+      <h2>The Tucano Time product</h2>
+      <p>Tucano Time is different from this website: it is software you run yourself. It has no cloud account, no telemetry and no AI features. Your timesheets, clients and invoices stay in your data directory. Network calls happen only for integrations the operator explicitly configures — mail, calendar, OIDC single sign-on, or optional accounting sync — plus the European Central Bank's anonymous daily exchange-rate feed used for currency conversion, which can be replaced with a local file. Credentials live in an encrypted local vault.</p>
+      <p>The detailed security model is in the <a href="https://github.com/TucanoTechnology/TucanoTime/blob/main/docs/security.md" target="_blank" rel="noopener noreferrer">product documentation</a>.</p>
+
+      <h2>Questions</h2>
+      <p>Ask in the open on the <a href="https://github.com/TucanoTechnology/TucanoTime/issues" target="_blank" rel="noopener noreferrer">Tucano Time issue tracker</a>. There is no privacy inbox because there is no data to request, export or delete from this site.</p>
+
+      <p class="legal-updated">Last updated: 23 October 2026.</p>
+      <p><a class="btn btn-secondary" href="./">Back to tucanotime.com</a></p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-bottom legal-footer">
+      <p>© <span id="year">2026</span> Tucano Technology. Tucano Time is free software under the GNU AGPL-3.0-or-later.</p>
+      <p><a href="./">tucanotime.com</a></p>
+    </div>
+  </footer>
+
+  <script src="js/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tucanotime.com/sitemap.xml
