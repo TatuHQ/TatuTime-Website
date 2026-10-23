@@ -27,9 +27,12 @@ must never collect or process user data.
    self-hosting is the product.
 3. **Free means free.** Say AGPL-3.0, no seat count, no invoice limit, no credit card. Never imply a
    trial, paid plan or vendor cloud.
-4. **Sovereignty claims must stay literal.** The site states no AI and no telemetry. Do not add an AI
-   feature, a chatbot embed, a "smart" integration or a third-party form. Network access is limited
-   to integrations the operator configures (SMTP, calendar, SSO, accounting sync).
+4. **AI in development is not AI in the product.** AI tools are used to build Tucano Time and this
+   site; say so. The product and this site must never send user data to AI, add an AI feature, embed a
+   chatbot/model or add a third-party form. Network access is limited to integrations the operator
+   configures (SMTP, calendar, SSO, accounting sync) plus the anonymous ECB reference-rate feed.
+   Keep the wording exact: "built with AI, but AI never touches your data" — never "no AI was
+   involved".
 5. **Accessibility does not regress.** Keyboard-operable navigation and tabs, visible focus,
    labelled controls, `aria-selected`/`aria-expanded` kept correct, contrast preserved in every
    section, and all motion disabled under `prefers-reduced-motion`. Check both 390 px and desktop.
@@ -39,7 +42,7 @@ must never collect or process user data.
    transformed filtered pixel art).
 7. **Screenshots come from the real product.** Use a throwaway data directory seeded with fictional
    demo data. Never commit a screenshot containing a real customer, invoice, email address or
-   credential. Desktop captures are 1440×940; the mobile hero is a narrow portrait capture (currently 500×758, the smallest headless Firefox window).
+   credential. Desktop captures are 1440×803; the mobile hero is a narrow portrait capture (currently 500×758, the smallest headless Firefox window).
 8. **Security headers stay on.** The container relies on the CSP, `nosniff`, frame denial, referrer
    policy and HSTS in `Caddyfile`. Do not weaken them for convenience; if Pages is used, note that
    GitHub Pages cannot set these headers, which is one reason the container exists.

@@ -16,4 +16,4 @@ Save the capture as `site/assets/img/og.png`. The meta tags in `site/index.html`
 with the absolute `https://tucanotime.com/` origin.
 
 Screenshots of the product itself (`site/assets/img/shot-*.png`) come from a real Tucano Time
-instance with a throwaway data directory and fictional demo data. Capture desktop views at 1440×940 and the mobile hero at a narrow portrait width; keep the browser chrome out of the crop.
+instance with a throwaway data directory and fictional demo data. Capture desktop views at 1440×803 and the mobile hero at a narrow portrait width; keep the browser chrome out of the crop.

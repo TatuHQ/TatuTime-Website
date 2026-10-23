@@ -116,7 +116,7 @@ at your server instead of GitHub.
 - **Behaviour:** `site/js/site.js` — mobile navigation, screenshot tabs, clipboard buttons. No
   dependencies.
 - **Screenshots:** `site/assets/img/shot-*.png` are captures of a real Tucano Time instance seeded
-  with fictional demo data. Regenerate them at 1440×940 for desktop and at a narrow mobile width for the hero (the checked-in capture is 500×758);
+  with fictional demo data. Regenerate them at 1440×803 for desktop and at a narrow mobile width for the hero (the checked-in capture is 500×758);
   never use a real customer's data.
 - **Social card:** open `tools/og-card.html` and screenshot the 1200×630 viewport to
   `site/assets/img/og.png`.
@@ -124,6 +124,8 @@ at your server instead of GitHub.
 ### House rules
 
 - No analytics, trackers, cookies, external fonts or CDN scripts. The page must work offline.
+- Say **"built with AI, but AI never touches your data"**. AI helped develop the project; the site
+  and the product must never send user data to AI, and the product must not gain a runtime AI feature.
 - No invented features or pricing. Tucano Time is free software; there is no hosted edition.
 - Keep the accessibility bar: keyboard-operable tabs and navigation, visible focus, labelled
   controls, adequate contrast, and motion disabled under `prefers-reduced-motion`.

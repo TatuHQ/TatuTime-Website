@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tucano Time — Self-hosted timesheets and invoicing</title>
-  <meta name="description" content="Free, self-hosted timesheets and invoicing for freelancers and small teams. Your data stays on your hardware. No cloud, no telemetry, no AI. AGPL-3.0.">
+  <meta name="description" content="Free, self-hosted timesheets and invoicing for freelancers and small teams. Your data stays on your hardware. No cloud, no telemetry, and AI never touches your data. AGPL-3.0.">
   <link rel="canonical" href="https://tucanotime.com/">
   <meta name="theme-color" content="#f6f0e4">
   <meta name="color-scheme" content="light">
@@ -13,7 +13,7 @@
   <meta property="og:site_name" content="Tucano Time">
   <meta property="og:url" content="https://tucanotime.com/">
   <meta property="og:title" content="Tucano Time — Your hours. Your invoices. Your server.">
-  <meta property="og:description" content="A free, self-hosted timesheet and invoicing app for freelancers and small teams. Plain files, no cloud, no telemetry, no AI.">
+  <meta property="og:description" content="A free, self-hosted timesheet and invoicing app for freelancers and small teams. Plain files, no cloud, no telemetry — and AI never touches your data.">
   <meta property="og:image" content="https://tucanotime.com/assets/img/og.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -22,7 +22,7 @@
   <meta name="author" content="Tucano Technology">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Tucano Time — Your hours. Your invoices. Your server.">
-  <meta name="twitter:description" content="Free, self-hosted timesheets and invoicing. Your data stays on your hardware. No cloud, no telemetry, no AI.">
+  <meta name="twitter:description" content="Free, self-hosted timesheets and invoicing. Your data stays on your hardware. No cloud, no telemetry; AI never touches your data.">
   <meta name="twitter:image" content="https://tucanotime.com/assets/img/og.png">
   <meta name="twitter:image:alt" content="Tucano Time — your hours, your invoices, your server.">
 
@@ -68,7 +68,7 @@
         <div class="hero-copy">
           <p class="eyebrow"><span class="pulse" aria-hidden="true"></span> Free &amp; open source · Self-hosted</p>
           <h1>Your hours. Your invoices. <em>Your server.</em></h1>
-          <p class="hero-lede">Tucano Time is a calm, fast timesheet and invoicing app for freelancers and small teams. Run it on hardware you control and keep every client, hour and invoice in files you actually own — never in a cloud, and never in an AI.</p>
+          <p class="hero-lede">Tucano Time is a calm, fast timesheet and invoicing app for freelancers and small teams. Run it on hardware you control and keep every client, hour and invoice in files you actually own — never in someone else's cloud, and never fed to an AI.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#self-host">
               Self-host in minutes
@@ -83,7 +83,7 @@
             <li>AGPL-3.0</li>
             <li>No account</li>
             <li>No telemetry</li>
-            <li>No AI</li>
+            <li>AI never sees your data</li>
           </ul>
         </div>
 
@@ -96,8 +96,8 @@
               <span class="browser-local">local</span>
             </div>
             <picture>
-              <source media="(max-width: 620px)" srcset="assets/img/shot-day-mobile.png">
-              <img src="assets/img/shot-day.png" width="1440" height="940" alt="Tucano Time day view showing entries for two projects, the week strip with daily totals, and a start-timer button" fetchpriority="high">
+              <source media="(max-width: 620px)" srcset="assets/img/shot-day-mobile.png?v=2">
+              <img src="assets/img/shot-day.png?v=2" width="1440" height="803" alt="Tucano Time day view showing entries for two projects, the week strip with daily totals, and a start-timer button" fetchpriority="high">
             </picture>
           </figure>
           <img class="hero-toucan" src="assets/brand/tucano.png" alt="" width="223" height="244" aria-hidden="true">
@@ -125,7 +125,7 @@
             <p class="kicker">Data sovereignty</p>
             <h2>Your business is not <span class="mark">training data.</span></h2>
           </div>
-          <p class="lede">Tucano Time has no cloud account, no usage analytics and no AI anywhere in the product. It talks only to services you explicitly configure, plus an anonymous public exchange-rate feed. Everything else stays on the machine you chose.</p>
+          <p class="lede">Tucano Time has no cloud account, no usage analytics and no AI in its data path. AI tools helped build the software, but they never see your timesheets, clients or invoices. The app talks only to integrations you configure, plus an anonymous public exchange-rate feed.</p>
         </div>
 
         <div class="sovereignty-grid">
@@ -158,8 +158,8 @@
             <li>
               <span class="promise-num">02</span>
               <div>
-                <h3>No AI. No telemetry.</h3>
-                <p>There is no model, no tracking pixel and no third-party script. The browser GUI is served by the same binary, and nothing reports back to Tucano Technology.</p>
+                <h3>Built with AI. Not on your data.</h3>
+                <p>AI tools helped write the code. The running app has no model, no AI feature and no tracking pixel — your timesheets and invoices are never sent to an AI. Nothing reports back to Tucano Technology.</p>
               </div>
             </li>
             <li>
@@ -280,10 +280,10 @@
         </div>
 
         <div class="tour-tabs" role="tablist" aria-label="Product screens">
-          <button class="tour-tab is-active" type="button" role="tab" id="tab-day" aria-controls="tour-panel" aria-selected="true" data-img="assets/img/shot-day.png" data-alt="Day timesheet with project entries and weekly totals" data-url="localhost:8080/timesheets/day" data-kicker="Timesheets" data-title="A day, at a glance." data-copy="Hours per project, notes, week totals and a timer on one screen. Each day shows what is billable, what is missing and what has already been invoiced.">Day</button>
-          <button class="tour-tab" type="button" role="tab" id="tab-week" aria-controls="tour-panel" aria-selected="false" tabindex="-1" data-img="assets/img/shot-week.png" data-alt="Week grid with editable hours per project and day totals" data-url="localhost:8080/timesheets/week" data-kicker="Timesheets" data-title="Fill the week, not a form." data-copy="Type hours straight into the grid, press Enter to save, and copy the previous week when it rhymes. Totals update per day and per project as you go.">Week</button>
-          <button class="tour-tab" type="button" role="tab" id="tab-invoices" aria-controls="tour-panel" aria-selected="false" tabindex="-1" data-img="assets/img/shot-invoices.png" data-alt="Invoice register with drafts, sent invoices, part payments and an outstanding balance" data-url="localhost:8080/invoices" data-kicker="Invoices" data-title="From hours to a sent invoice." data-copy="Drafts, sent, partly paid, paid, written off. Issuing archives the PDF and locks the time it billed; payments are recorded against the invoice without rewriting history.">Invoices</button>
-          <button class="tour-tab" type="button" role="tab" id="tab-expenses" aria-controls="tour-panel" aria-selected="false" tabindex="-1" data-img="assets/img/shot-expenses.png" data-alt="Expense register with categories, billable flags and amounts per project" data-url="localhost:8080/expenses" data-kicker="Expenses" data-title="Receipts without the shoebox." data-copy="Categorise project costs, attach receipts, mark what is billable, and roll approved expenses into the next invoice with the time they belong to.">Expenses</button>
+          <button class="tour-tab is-active" type="button" role="tab" id="tab-day" aria-controls="tour-panel" aria-selected="true" data-img="assets/img/shot-day.png?v=2" data-alt="Day timesheet with project entries and weekly totals" data-url="localhost:8080/timesheets/day" data-kicker="Timesheets" data-title="A day, at a glance." data-copy="Hours per project, notes, week totals and a timer on one screen. Each day shows what is billable, what is missing and what has already been invoiced.">Day</button>
+          <button class="tour-tab" type="button" role="tab" id="tab-week" aria-controls="tour-panel" aria-selected="false" tabindex="-1" data-img="assets/img/shot-week.png?v=2" data-alt="Week grid with editable hours per project and day totals" data-url="localhost:8080/timesheets/week" data-kicker="Timesheets" data-title="Fill the week, not a form." data-copy="Type hours straight into the grid, press Enter to save, and copy the previous week when it rhymes. Totals update per day and per project as you go.">Week</button>
+          <button class="tour-tab" type="button" role="tab" id="tab-invoices" aria-controls="tour-panel" aria-selected="false" tabindex="-1" data-img="assets/img/shot-invoices.png?v=2" data-alt="Invoice register with drafts, sent invoices, part payments and an outstanding balance" data-url="localhost:8080/invoices" data-kicker="Invoices" data-title="From hours to a sent invoice." data-copy="Drafts, sent, partly paid, paid, written off. Issuing archives the PDF and locks the time it billed; payments are recorded against the invoice without rewriting history.">Invoices</button>
+          <button class="tour-tab" type="button" role="tab" id="tab-expenses" aria-controls="tour-panel" aria-selected="false" tabindex="-1" data-img="assets/img/shot-expenses.png?v=2" data-alt="Expense register with categories, billable flags and amounts per project" data-url="localhost:8080/expenses" data-kicker="Expenses" data-title="Receipts without the shoebox." data-copy="Categorise project costs, attach receipts, mark what is billable, and roll approved expenses into the next invoice with the time they belong to.">Expenses</button>
         </div>
 
         <div class="tour-stage" id="tour-panel" role="tabpanel" aria-labelledby="tab-day" tabindex="0">
@@ -294,7 +294,7 @@
                 <span class="browser-url" id="tour-url">localhost:8080/timesheets/day</span>
                 <span class="browser-local">local</span>
               </div>
-              <img id="tour-img" src="assets/img/shot-day.png" width="1440" height="940" alt="Day timesheet with project entries and weekly totals" loading="lazy">
+              <img id="tour-img" src="assets/img/shot-day.png?v=2" width="1440" height="803" alt="Day timesheet with project entries and weekly totals" loading="lazy">
             </figure>
           </div>
           <div class="tour-meta">
@@ -311,7 +311,7 @@
               <span class="browser-dots"><i></i><i></i><i></i></span>
               <span class="browser-url">localhost:8080/timesheets/day</span>
             </div>
-            <img src="assets/img/shot-day-dark.png" width="1440" height="940" alt="The same day timesheet in Tucano Time's dark theme" loading="lazy">
+            <img src="assets/img/shot-day-dark.png?v=2" width="1440" height="803" alt="The same day timesheet in Tucano Time's dark theme" loading="lazy">
           </figure>
           <div class="dark-note-copy">
             <p class="tour-kicker">Included</p>
@@ -390,7 +390,7 @@
           </li>
           <li>
             <h3>Quiet by default</h3>
-            <p>No account and no telemetry. Outbound calls exist only for integrations you configure, plus the ECB reference-rate feed — replaceable with a local file for air-gapped installs.</p>
+            <p>No account, no telemetry, and no AI in the data path. Outbound calls exist only for integrations you configure, plus the ECB reference-rate feed — replaceable with a local file for air-gapped installs.</p>
           </li>
           <li>
             <h3>Backups without a service</h3>
@@ -514,8 +514,8 @@ cargo test --all-targets</code></pre>
             <p>In a directory you choose — <code>/data</code> in the container, <code>./Data</code> locally. It is plain JSON plus archived PDFs. Copy it, zip it, inspect it. The app never needs a cloud account.</p>
           </details>
           <details>
-            <summary>Does it use AI or send data to third parties?</summary>
-            <p>No. There is no AI feature, no analytics and no telemetry. Network calls happen only for integrations you configure yourself: SMTP, an ICS or Google/Microsoft calendar, OIDC single sign-on, or optional accounting sync. Currency conversion fetches the ECB's anonymous daily reference rates, or reads a local <code>TUCANO_FX_RATES_FILE</code> for a fully offline install. Secrets live in an encrypted local vault.</p>
+            <summary>Was AI used to build it? Does it touch my data?</summary>
+            <p>AI tools helped build Tucano Time — but they never see your data. The running app has no AI features, no analytics and no telemetry. Your timesheets, clients and invoices stay in your data directory and are never sent to an AI. Network calls happen only for integrations you configure yourself: SMTP, an ICS or Google/Microsoft calendar, OIDC single sign-on, or optional accounting sync. Currency conversion fetches the ECB's anonymous daily reference rates, or reads a local <code>TUCANO_FX_RATES_FILE</code> for a fully offline install. Secrets live in an encrypted local vault.</p>
           </details>
           <details>
             <summary>Is there a hosted version?</summary>
