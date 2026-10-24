@@ -28,6 +28,7 @@ docker-compose.yml          hardened container, loopback-bound by default
 docker-compose.tls.yml      optional automatic HTTPS overlay
 brand/                      original Tucano Technology source assets (not published)
 tools/og-card.html          source for the 1200x630 social card
+tools/check-site.py         link, asset, id and CSP-safety checks
 .github/workflows/          Pages deployment + multi-arch container build
 ```
 
@@ -44,36 +45,33 @@ Then open <http://localhost:8080/>. There is nothing to install or compile.
 Run the repository checks before opening a pull request:
 
 ```sh
-python3 tools/check-site.py        # links, assets, ids, CSP-safe markup
-docker build -t tucanotime-website .  # Caddyfile + image
+python3 tools/check-site.py            # links, assets, ids, CSP-safe markup
+docker build -t tucanotime-website .   # Caddyfile + image
 ```
 
-## Hosting
+## Deploy
 
-### Option A — GitHub Pages (zero ops)
+### Option A — GitHub Pages
 
-This is the simplest launch: free, global CDN, managed TLS, and it is already wired up in
+The default deployment, already wired up in
 [`.github/workflows/pages.yml`](.github/workflows/pages.yml).
 
-1. Push the repository to GitHub (this one is `TucanoTechnology/TucanoTime-Website`).
-2. **Settings → Pages → Build and deployment → Source: GitHub Actions.**
-3. Run the *Deploy website to GitHub Pages* workflow, or push to `main`.
-4. Set the custom domain to `tucanotime.com` and enable **Enforce HTTPS**.
-5. At your DNS provider, point the apex at GitHub Pages and `www` at the Pages hostname:
+1. **Settings → Pages → Build and deployment → Source: GitHub Actions.**
+2. Run the *Deploy website to GitHub Pages* workflow, or push to `main`.
+3. Set the custom domain to `tucanotime.com` and enable **Enforce HTTPS**.
 
-| Type | Name | Value |
-| --- | --- | --- |
-| A | `@` | `185.199.108.153` |
-| A | `@` | `185.199.109.153` |
-| A | `@` | `185.199.110.153` |
-| A | `@` | `185.199.111.153` |
-| CNAME | `www` | `tucanotechnology.github.io` |
+DNS lives in the Cloudflare zone `tucanotime.com`:
 
-Propagation is usually minutes, up to a few hours. GitHub issues the certificate once DNS resolves.
+| Type | Name | Value | Proxy |
+| --- | --- | --- | --- |
+| A | `@` | `185.199.108.153` … `185.199.111.153` | Proxied |
+| AAAA | `@` | `2606:50c0:8000::153` … `2606:50c0:8003::153` | Proxied |
+| CNAME | `www` | `tucanotechnology.github.io` | Proxied |
+
+The apex is proxied through Cloudflare (edge TLS, WAF, security headers) with SSL mode *Full
+(strict)* against the certificate GitHub issues for the origin. `www` is proxied as well and
+redirected to the apex by a Cloudflare Single Redirect rule so both hostnames work over HTTPS.
 `site/CNAME` keeps the domain recorded in the repository.
-
-The trade-off: GitHub is still a third party serving the marketing page (never the product data).
-If that sits badly with the project's message, use option B.
 
 ### Option B — self-hosted container
 
@@ -116,16 +114,14 @@ at your server instead of GitHub.
 - **Behaviour:** `site/js/site.js` — mobile navigation, screenshot tabs, clipboard buttons. No
   dependencies.
 - **Screenshots:** `site/assets/img/shot-*.png` are captures of a real Tucano Time instance seeded
-  with fictional demo data. Regenerate them at 1440×803 for desktop and at a narrow mobile width for the hero (the checked-in capture is 500×758);
-  never use a real customer's data.
+  with fictional demo data. Regenerate them at 1440×803 for desktop and at a narrow mobile width for
+  the hero (the checked-in capture is 500×758); never use a real customer's data.
 - **Social card:** open `tools/og-card.html` and screenshot the 1200×630 viewport to
   `site/assets/img/og.png`.
 
-### House rules
+### Content rules
 
 - No analytics, trackers, cookies, external fonts or CDN scripts. The page must work offline.
-- Say **"built with AI, but AI never touches your data"**. AI helped develop the project; the site
-  and the product must never send user data to AI, and the product must not gain a runtime AI feature.
 - No invented features or pricing. Tucano Time is free software; there is no hosted edition.
 - Keep the accessibility bar: keyboard-operable tabs and navigation, visible focus, labelled
   controls, adequate contrast, and motion disabled under `prefers-reduced-motion`.
