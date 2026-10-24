@@ -1,8 +1,9 @@
 # AI Agent Rules — Tucano Time Website
 
 Repository-specific rules for the marketing site at `tucanotime.com`. The shared organisation
-rules in [TucanoAgentRules](https://github.com/TucanoTechnology/TucanoAgentRules) apply; this file
-records what is specific to this repository.
+rules live in [`AgentRules/`](AgentRules/README.md), synced from
+[TucanoAgentRules](https://github.com/TucanoTechnology/TucanoAgentRules); this file records what is
+specific to this repository.
 
 ## What this repository is
 
@@ -74,3 +75,21 @@ The site must visibly encourage people to contribute to
 [`TucanoTechnology/TucanoTime`](https://github.com/TucanoTechnology/TucanoTime): the "Built in the
 open" section, the GitHub navigation link, the footer links and the FAQ answer are part of the
 product story. Do not remove them in a redesign.
+
+<!-- shared-rules-table:begin -->
+| Area | Rules |
+| --- | --- |
+| API & data contracts | [`AgentRules/coding/api-and-data-contracts.md`](AgentRules/coding/api-and-data-contracts.md) |
+| Branching & git | [`AgentRules/coding/branching-and-git.md`](AgentRules/coding/branching-and-git.md) |
+| Code review | [`AgentRules/coding/code-review.md`](AgentRules/coding/code-review.md) |
+| Dependencies | [`AgentRules/coding/dependencies.md`](AgentRules/coding/dependencies.md) |
+| Peak-hour warnings | [`AgentRules/generic/peak-hours.md`](AgentRules/generic/peak-hours.md) |
+| Principles | [`AgentRules/generic/principles.md`](AgentRules/generic/principles.md) |
+| Ticket template | [`AgentRules/project-management/ticket-template.md`](AgentRules/project-management/ticket-template.md) |
+| Ticket workflow | [`AgentRules/project-management/workflow.md`](AgentRules/project-management/workflow.md) |
+| Security | [`AgentRules/security/security.md`](AgentRules/security/security.md) |
+| Contract tests | [`AgentRules/test/contract.md`](AgentRules/test/contract.md) |
+| Performance tests | [`AgentRules/test/performance.md`](AgentRules/test/performance.md) |
+| Browser & end-to-end tests | [`AgentRules/test/ui.md`](AgentRules/test/ui.md) |
+| Unit tests | [`AgentRules/test/unit.md`](AgentRules/test/unit.md) |
+<!-- shared-rules-table:end -->
