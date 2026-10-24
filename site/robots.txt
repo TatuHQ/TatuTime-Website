@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tucanotime.com/sitemap.xml
+Sitemap: https://tatutime.com/sitemap.xml

@@ -1,4 +1,4 @@
-/* Tucano Time — tucanotime.com
+/* TatuTime — tatutime.com
    Hand-written, dependency-free CSS. No external fonts, no trackers. */
 
 :root {
@@ -11,10 +11,10 @@
   --line: #d8cdbb;
   --line-strong: #b9a98f;
   --dark-line: #43382e;
-  --orange: #f4a300;
-  --orange-deep: #e95420;
-  --orange-soft: #fbe6bd;
-  --accent-text: #9d3f0c;
+  --accent: #6ab6dc;
+  --accent-deep: #1f6f95;
+  --accent-soft: #d8eef8;
+  --accent-text: #14536f;
   --green: #2f6b4f;
   --wrap: 1180px;
   --gutter: clamp(1.1rem, 4vw, 2.5rem);
@@ -62,7 +62,7 @@ p { margin: 0 0 1rem; }
 p:last-child { margin-bottom: 0; }
 
 a { color: inherit; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
-a:hover { text-decoration-color: var(--orange-deep); }
+a:hover { text-decoration-color: var(--accent-deep); }
 
 code {
   font-family: var(--font-mono);
@@ -73,7 +73,7 @@ code {
   padding: 0.08em 0.32em;
 }
 
-::selection { background: var(--orange); color: var(--ink); }
+::selection { background: var(--accent); color: var(--ink); }
 
 :focus-visible {
   outline: 3px solid var(--accent-text);
@@ -84,9 +84,9 @@ code {
 .section-ink :focus-visible,
 .site-footer :focus-visible,
 .terminal :focus-visible,
-.clone-card :focus-visible { outline-color: var(--orange); }
+.clone-card :focus-visible { outline-color: var(--accent); }
 
-.section-orange :focus-visible { outline-color: var(--ink); }
+.section-accent :focus-visible { outline-color: var(--ink); }
 
 .sr-only {
   position: absolute;
@@ -185,7 +185,7 @@ code {
   padding: 0.4rem 0;
   border-bottom: 2px solid transparent;
 }
-.site-nav > a:not(.nav-github):hover { border-bottom-color: var(--orange-deep); }
+.site-nav > a:not(.nav-github):hover { border-bottom-color: var(--accent-deep); }
 
 .nav-github {
   display: inline-flex;
@@ -249,7 +249,7 @@ code {
   padding: clamp(2.5rem, 5.5vw, 4.75rem) 0 2.5rem;
   background:
     radial-gradient(circle at 1px 1px, rgba(23, 18, 15, 0.11) 1px, transparent 1.6px) 0 0 / 26px 26px,
-    radial-gradient(900px 480px at 82% 22%, rgba(244, 163, 0, 0.2), transparent 62%),
+    radial-gradient(900px 480px at 82% 22%, rgba(106, 182, 220, 0.2), transparent 62%),
     var(--paper);
 }
 
@@ -306,7 +306,7 @@ code {
   right: -0.06em;
   bottom: 0.03em;
   height: 0.34em;
-  background: var(--orange);
+  background: var(--accent);
   transform: rotate(-1.2deg);
   border-radius: 2px;
 }
@@ -354,7 +354,7 @@ code {
   box-shadow: 0 0 0 var(--ink);
 }
 
-.btn-primary { background: var(--orange); color: var(--ink); }
+.btn-primary { background: var(--accent); color: var(--ink); }
 .btn-primary:hover { background: #ffb31a; }
 .btn-secondary { background: var(--card); color: var(--ink); }
 .btn-wide { width: 100%; }
@@ -391,7 +391,7 @@ code {
 .hero-glow {
   position: absolute;
   inset: 8% -6% -8% 6%;
-  background: radial-gradient(circle at 55% 45%, rgba(244, 163, 0, 0.5), transparent 65%);
+  background: radial-gradient(circle at 55% 45%, rgba(106, 182, 220, 0.5), transparent 65%);
   filter: blur(28px);
   z-index: 0;
   border-radius: 50%;
@@ -430,7 +430,7 @@ code {
   border: 1px solid #9b8c77;
   background: transparent;
 }
-.browser-dots i:first-child { background: var(--orange); }
+.browser-dots i:first-child { background: var(--accent); }
 
 .browser-url {
   flex: 1;
@@ -460,7 +460,7 @@ code {
   padding: 0.14rem 0.42rem;
 }
 
-.hero-toucan {
+.hero-mark {
   position: absolute;
   z-index: 3;
   width: clamp(96px, 13vw, 148px);
@@ -478,7 +478,7 @@ code {
   padding: 0.42rem 0.72rem;
   border: 1.5px solid var(--ink);
   border-radius: 7px;
-  background: var(--orange);
+  background: var(--accent);
   color: var(--ink);
   font-family: var(--font-mono);
   font-size: 0.71rem;
@@ -573,7 +573,7 @@ code {
   content: "";
   width: 9px;
   height: 9px;
-  background: var(--orange-deep);
+  background: var(--accent-deep);
   flex: 0 0 auto;
 }
 
@@ -587,7 +587,7 @@ code {
 }
 
 .mark {
-  background: linear-gradient(transparent 60%, var(--orange) 60%);
+  background: linear-gradient(transparent 60%, var(--accent) 60%);
   padding: 0 0.05em;
 }
 
@@ -602,10 +602,10 @@ code {
   border-bottom: 0;
 }
 
-.section-ink .kicker { color: var(--orange); }
-.section-ink .kicker::before { background: var(--orange); }
+.section-ink .kicker { color: var(--accent); }
+.section-ink .kicker::before { background: var(--accent); }
 .section-ink .lede { color: #c9bcaa; }
-.section-ink h2 .mark { background: var(--orange); color: var(--ink); padding: 0 0.08em; }
+.section-ink h2 .mark { background: var(--accent); color: var(--ink); padding: 0 0.08em; }
 
 .sovereignty-grid {
   display: grid;
@@ -647,7 +647,7 @@ code {
 
 .file-card pre { padding: 1.25rem 1.15rem; color: #e7dcca; }
 .tree-dim { color: #8d7f6e; }
-.tree-dir { color: var(--orange); }
+.tree-dir { color: var(--accent); }
 .tree-file { color: #9dc3a8; }
 
 .file-card-note {
@@ -678,7 +678,7 @@ code {
   font-family: var(--font-mono);
   font-size: 0.72rem;
   font-weight: 700;
-  color: var(--orange);
+  color: var(--accent);
   padding-top: 0.25rem;
 }
 
@@ -714,7 +714,7 @@ code {
 
 .feature:hover {
   transform: translate(-2px, -2px);
-  box-shadow: 5px 5px 0 var(--orange);
+  box-shadow: 5px 5px 0 var(--accent);
 }
 
 .feature-icon {
@@ -723,7 +723,7 @@ code {
   width: 44px;
   height: 44px;
   margin-bottom: 1.05rem;
-  background: var(--orange-soft);
+  background: var(--accent-soft);
   border: 1.5px solid var(--ink);
   border-radius: 10px;
   color: var(--ink);
@@ -764,7 +764,7 @@ code {
 .tour-tab:hover { color: var(--ink); }
 .tour-tab[aria-selected="true"] {
   color: var(--ink);
-  border-bottom-color: var(--orange-deep);
+  border-bottom-color: var(--accent-deep);
 }
 
 .tour-stage {
@@ -809,7 +809,7 @@ code {
 .tour-foot {
   margin-top: 1.2rem;
   padding-left: 0.85rem;
-  border-left: 3px solid var(--orange);
+  border-left: 3px solid var(--accent);
   color: var(--muted) !important;
   font-size: 0.83rem !important;
 }
@@ -847,7 +847,7 @@ code {
   height: 34px;
   border: 1.5px solid var(--ink);
   border-radius: 50%;
-  background: var(--orange);
+  background: var(--accent);
   font-family: var(--font-mono);
   font-size: 0.8rem;
   font-weight: 800;
@@ -869,7 +869,7 @@ code {
 .text-link {
   font-weight: 700;
   text-decoration: underline;
-  text-decoration-color: var(--orange-deep);
+  text-decoration-color: var(--accent-deep);
   text-decoration-thickness: 2px;
 }
 
@@ -912,7 +912,7 @@ code {
   cursor: pointer;
 }
 .copy-btn:hover { background: rgba(255, 255, 255, 0.1); }
-.copy-btn.is-copied { background: var(--orange); color: var(--ink); border-color: var(--orange); }
+.copy-btn.is-copied { background: var(--accent); color: var(--ink); border-color: var(--accent); }
 
 .terminal pre { padding: 1.35rem 1.2rem; color: #f0e6d6; font-size: 0.76rem; }
 
@@ -956,10 +956,10 @@ code {
 
 /* ------------------------------------------------------------------ free */
 
-.section-orange {
+.section-accent {
   background:
     repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.075) 0 2px, transparent 2px 9px),
-    var(--orange);
+    var(--accent);
   color: var(--ink);
   border-block: 2px solid var(--ink);
 }
@@ -1047,7 +1047,7 @@ code {
 
 .contrib-card:hover {
   transform: translate(-2px, -2px);
-  box-shadow: 5px 5px 0 var(--orange);
+  box-shadow: 5px 5px 0 var(--accent);
   text-decoration: none;
 }
 
@@ -1059,7 +1059,7 @@ code {
   margin-bottom: 0.4rem;
   border: 1.5px solid var(--ink);
   border-radius: 9px;
-  background: var(--orange-soft);
+  background: var(--accent-soft);
 }
 
 .contrib-card h3 { font-size: 1.1rem; }
@@ -1088,7 +1088,7 @@ code {
   color: var(--paper);
   border-radius: 16px;
   border: 2px solid var(--ink);
-  box-shadow: 8px 8px 0 var(--orange);
+  box-shadow: 8px 8px 0 var(--accent);
 }
 
 .clone-copy h3 { font-size: 1.45rem; margin-bottom: 0.55rem; }
@@ -1180,7 +1180,7 @@ code {
 .site-footer {
   background: var(--ink);
   color: var(--paper);
-  border-top: 6px solid var(--orange);
+  border-top: 6px solid var(--accent);
   padding: clamp(3rem, 6vw, 4.5rem) 0 1.5rem;
 }
 
@@ -1192,7 +1192,7 @@ code {
 
 .footer-brand .brand { margin-bottom: 1rem; }
 .brand-footer .brand-word { color: var(--paper); font-size: 1.35rem; }
-.brand-footer .brand-word strong { color: var(--orange); }
+.brand-footer .brand-word strong { color: var(--accent); }
 
 .footer-mark {
   display: grid;
@@ -1227,7 +1227,7 @@ code {
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--orange);
+  color: var(--accent);
 }
 
 .footer-col a {
@@ -1237,7 +1237,7 @@ code {
   font-size: 0.9rem;
   text-decoration: none;
 }
-.footer-col a:hover { color: var(--paper); text-decoration: underline; text-decoration-color: var(--orange); }
+.footer-col a:hover { color: var(--paper); text-decoration: underline; text-decoration-color: var(--accent); }
 
 .footer-bottom {
   display: flex;
@@ -1349,7 +1349,7 @@ code {
   .nav-github { margin-top: 0.9rem; align-self: flex-start; }
 
   .sticker-yours { top: 8%; left: -0.5rem; }
-  .hero-toucan { right: 0.25rem; }
+  .hero-mark { right: 0.25rem; }
 
   .clone-card { grid-template-columns: 1fr; }
   .clone-btn { justify-self: stretch; }
@@ -1370,7 +1370,7 @@ code {
   .tour-tabs { scrollbar-width: none; }
   .tour-tabs::-webkit-scrollbar { display: none; }
   .tour-tab { padding: 0.7rem 0.55rem; font-size: 0.88rem; }
-  .hero-toucan { width: 92px; top: -2.3rem; }
+  .hero-mark { width: 92px; top: -2.3rem; }
   .sticker { font-size: 0.63rem; padding: 0.34rem 0.55rem; }
   .sticker-yours { top: 6%; left: -0.35rem; }
   .sticker-price { right: 0.5rem; bottom: -1.4rem; }
@@ -1439,7 +1439,7 @@ code {
 .legal h2 { font-size: clamp(1.35rem, 2.4vw, 1.7rem); margin: 2.4rem 0 0.6rem; }
 .legal p, .legal li { color: var(--ink-soft); line-height: 1.7; }
 .legal ul { display: grid; gap: 0.55rem; margin: 0 0 1rem; padding-left: 1.2rem; }
-.legal a { text-decoration-color: var(--orange-deep); text-decoration-thickness: 2px; }
+.legal a { text-decoration-color: var(--accent-deep); text-decoration-thickness: 2px; }
 .legal .btn { margin-top: 1.4rem; text-decoration: none; }
 .legal-updated { margin-top: 2.2rem; font-family: var(--font-mono); font-size: 0.72rem !important; color: var(--muted) !important; }
 .legal-footer { margin-top: 0; }
@@ -1453,7 +1453,7 @@ code {
   padding: clamp(3rem, 8vw, 6rem) 0;
   background:
     radial-gradient(circle at 1px 1px, rgba(23, 18, 15, 0.1) 1px, transparent 1.6px) 0 0 / 26px 26px,
-    radial-gradient(700px 420px at 80% 50%, rgba(244, 163, 0, 0.22), transparent 65%),
+    radial-gradient(700px 420px at 80% 50%, rgba(106, 182, 220, 0.22), transparent 65%),
     var(--paper);
 }
 
@@ -1466,7 +1466,7 @@ code {
 
 .notfound h1 { font-size: clamp(2.8rem, 7vw, 5.4rem); margin-bottom: 1rem; }
 .notfound .lede { max-width: 52ch; margin-bottom: 1.8rem; }
-.notfound-toucan {
+.notfound-mark {
   width: min(280px, 100%);
   justify-self: center;
   image-rendering: pixelated;
@@ -1476,7 +1476,7 @@ code {
 
 @media (max-width: 760px) {
   .notfound-grid { grid-template-columns: 1fr; }
-  .notfound-toucan { width: 170px; justify-self: start; }
+  .notfound-mark { width: 170px; justify-self: start; }
 }
 
 @media (prefers-reduced-motion: reduce) {

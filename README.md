@@ -1,13 +1,13 @@
-# tucanotime.com
+# tatutime.com
 
-The marketing website for [Tucano Time](https://github.com/TucanoTechnology/TucanoTime) — a free,
+The marketing website for [TatuTime](https://github.com/TatuHQ/TatuTime) — a free,
 self-hosted timesheet and invoicing app for freelancers and small teams.
 
 The site is deliberately boring technology: hand-written HTML, CSS and a small vanilla-JS file.
 No build step, no framework, no external fonts, no analytics, no cookies, no third-party requests.
 It can be served by GitHub Pages or from a hardened container you own.
 
-![The Tucano Time day view, captured from the real product](site/assets/img/shot-day.png)
+![The TatuTime day view, captured from the real product](site/assets/img/shot-day.png)
 
 ## Layout
 
@@ -19,14 +19,14 @@ site/                       the entire deployable website
   css/site.css              all styles (design tokens at the top)
   js/site.js                mobile nav, screenshot tabs, copy buttons
   assets/img/               real product screenshots + social card
-  assets/brand/             toucan, favicons and Tucano Technology marks
-  CNAME                     tucanotime.com, for GitHub Pages
+  assets/brand/             pixel tatu mark, favicons and TatuHQ assets
+  CNAME                     tatutime.com, for GitHub Pages
   robots.txt, sitemap.xml, site.webmanifest
 Caddyfile                   production headers, clean URLs, 404 handling, health probe
 Dockerfile                  Caddy static image
 docker-compose.yml          hardened container, loopback-bound by default
 docker-compose.tls.yml      optional automatic HTTPS overlay
-brand/                      original Tucano Technology source assets (not published)
+brand/                      original TatuHQ source assets (not published)
 tools/og-card.html          source for the 1200x630 social card
 tools/check-site.py         link, asset, id and CSP-safety checks
 .github/workflows/          Pages deployment + multi-arch container build
@@ -46,7 +46,7 @@ Run the repository checks before opening a pull request:
 
 ```sh
 python3 tools/check-site.py            # links, assets, ids, CSP-safe markup
-docker build -t tucanotime-website .   # Caddyfile + image
+docker build -t tatutime-website .   # Caddyfile + image
 ```
 
 ## Deploy
@@ -58,15 +58,15 @@ The default deployment, already wired up in
 
 1. **Settings → Pages → Build and deployment → Source: GitHub Actions.**
 2. Run the *Deploy website to GitHub Pages* workflow, or push to `main`.
-3. Set the custom domain to `tucanotime.com` and enable **Enforce HTTPS**.
+3. Set the custom domain to `tatutime.com` and enable **Enforce HTTPS**.
 
-DNS lives in the Cloudflare zone `tucanotime.com`:
+DNS lives in the Cloudflare zone `tatutime.com`:
 
 | Type | Name | Value | Proxy |
 | --- | --- | --- | --- |
 | A | `@` | `185.199.108.153` … `185.199.111.153` | Proxied |
 | AAAA | `@` | `2606:50c0:8000::153` … `2606:50c0:8003::153` | Proxied |
-| CNAME | `www` | `tucanotechnology.github.io` | Proxied |
+| CNAME | `www` | `tatuhq.github.io` | Proxied |
 
 The apex is proxied through Cloudflare (edge TLS, WAF, security headers) with SSL mode *Full
 (strict)* against the certificate GitHub issues for the origin. `www` is proxied as well and
@@ -87,7 +87,7 @@ docker compose up -d --build
 Set `SITE_PORT` to move the loopback port. To serve TLS directly with automatic certificates:
 
 ```sh
-SITE_ADDRESS=tucanotime.com docker compose -f docker-compose.yml -f docker-compose.tls.yml up -d
+SITE_ADDRESS=tatutime.com docker compose -f docker-compose.yml -f docker-compose.tls.yml up -d
 ```
 
 Point the domain's A/AAAA records at the host and allow inbound 80/443. Caddy obtains and renews
@@ -97,9 +97,9 @@ proxy that already terminates TLS — use the default compose file there instead
 Published images (built from `main` and `v*` tags):
 
 ```
-ghcr.io/tucanotechnology/tucanotime-website:latest
-ghcr.io/tucanotechnology/tucanotime-website:<version>
-ghcr.io/tucanotechnology/tucanotime-website:sha-<short>
+ghcr.io/tatuhq/tatutime-website:latest
+ghcr.io/tatuhq/tatutime-website:<version>
+ghcr.io/tatuhq/tatutime-website:sha-<short>
 ```
 
 If you choose the container, disable the Pages workflow (or leave Pages unconfigured) and point DNS
@@ -108,12 +108,12 @@ at your server instead of GitHub.
 ## Changing content
 
 - **Copy and structure:** `site/index.html`. Keep claims factual and check them against the
-  [Tucano Time docs](https://github.com/TucanoTechnology/TucanoTime/tree/main/docs).
+  [TatuTime docs](https://github.com/TatuHQ/TatuTime/tree/main/docs).
 - **Colour, type, spacing:** design tokens at the top of `site/css/site.css` (`--paper`, `--ink`,
-  `--orange`, `--accent-text`, `--wrap`, fonts).
+  `--accent`, `--accent-text`, `--wrap`, fonts).
 - **Behaviour:** `site/js/site.js` — mobile navigation, screenshot tabs, clipboard buttons. No
   dependencies.
-- **Screenshots:** `site/assets/img/shot-*.png` are captures of a real Tucano Time instance seeded
+- **Screenshots:** `site/assets/img/shot-*.png` are captures of a real TatuTime instance seeded
   with fictional demo data. Regenerate them at 1440×803 for desktop and at a narrow mobile width for
   the hero (the checked-in capture is 500×758); never use a real customer's data.
 - **Social card:** open `tools/og-card.html` and screenshot the 1200×630 viewport to
@@ -122,7 +122,7 @@ at your server instead of GitHub.
 ### Content rules
 
 - No analytics, trackers, cookies, external fonts or CDN scripts. The page must work offline.
-- No invented features or pricing. Tucano Time is free software; there is no hosted edition.
+- No invented features or pricing. TatuTime is free software; there is no hosted edition.
 - Keep the accessibility bar: keyboard-operable tabs and navigation, visible focus, labelled
   controls, adequate contrast, and motion disabled under `prefers-reduced-motion`.
 - If you add an external resource, update the CSP in `Caddyfile` **and** justify why it cannot be
@@ -130,13 +130,13 @@ at your server instead of GitHub.
 
 ## Contributing
 
-The product lives at [TucanoTechnology/TucanoTime](https://github.com/TucanoTechnology/TucanoTime).
+The product lives at [TatuHQ/TatuTime](https://github.com/TatuHQ/TatuTime).
 Bug reports, good first issues, documentation fixes and testing on your own hardware are all
 welcome there. This repository is just the shop window; the same contribution rules apply.
 
 ## Licence
 
-The website source is licensed under [AGPL-3.0-or-later](LICENSE), matching Tucano Time. The Tucano
-Technology and Tucano Time names and logos are trademarks of Tucano Technology; the brand assets in
+The website source is licensed under [AGPL-3.0-or-later](LICENSE), matching TatuTime. The Tatu
+Technology and TatuTime names and logos are trademarks of TatuHQ; the brand assets in
 `site/assets/brand/` are provided for this project's official site and should not be used to imply
 endorsement elsewhere.

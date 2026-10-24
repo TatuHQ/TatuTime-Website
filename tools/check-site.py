@@ -116,8 +116,8 @@ def main() -> int:
     cname = os.path.join(SITE, "CNAME")
     if os.path.exists(cname):
         value = open(cname, encoding="utf-8").read().strip()
-        if value != "tucanotime.com":
-            errors.append(f"CNAME must be tucanotime.com, found {value!r}")
+        if value != "tatutime.com":
+            errors.append(f"CNAME must be tatutime.com, found {value!r}")
 
     parsed_pages: dict[str, Page] = {}
     for name in PAGES:

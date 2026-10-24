@@ -13,7 +13,7 @@ python3 -m http.server 8097
 ```
 
 Save the capture as `site/assets/img/og.png`. The meta tags in `site/index.html` reference that path
-with the absolute `https://tucanotime.com/` origin.
+with the absolute `https://tatutime.com/` origin.
 
-Screenshots of the product itself (`site/assets/img/shot-*.png`) come from a real Tucano Time
+Screenshots of the product itself (`site/assets/img/shot-*.png`) come from a real TatuTime
 instance with a throwaway data directory and fictional demo data. Capture desktop views at 1440×803 and the mobile hero at a narrow portrait width; keep the browser chrome out of the crop.

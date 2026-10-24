@@ -21,4 +21,4 @@ jobs:
         run: python3 tools/check-site.py
 
       - name: Build the container
-        run: docker build --tag tucanotime-website:ci .
+        run: docker build --tag tatutime-website:ci .
