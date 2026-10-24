@@ -1,6 +1,6 @@
 'use strict';
 
-/* Tucano Time — site behaviour.
+/* TatuTime — site behaviour.
    Dependency-free, no network calls, no cookies, no storage. */
 
 (() => {

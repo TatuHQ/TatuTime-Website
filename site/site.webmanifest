@@ -1,6 +1,6 @@
 {
-  "name": "Tucano Time",
-  "short_name": "Tucano Time",
+  "name": "TatuTime",
+  "short_name": "TatuTime",
   "description": "Free, self-hosted timesheets and invoicing. Your data stays on your hardware.",
   "start_url": "/",
   "display": "browser",

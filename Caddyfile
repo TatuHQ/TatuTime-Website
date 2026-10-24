@@ -1,8 +1,8 @@
-# Tucano Time — tucanotime.com
+# TatuTime — tatutime.com
 #
 # SITE_ADDRESS controls what Caddy listens on:
 #   :80                plain HTTP (default; put a reverse proxy in front)
-#   tucanotime.com     automatic HTTPS on 80/443 (use docker-compose.tls.yml)
+#   tatutime.com     automatic HTTPS on 80/443 (use docker-compose.tls.yml)
 #
 # The site is pure static files: no backend, no database, no cookies.
 {

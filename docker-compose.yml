@@ -1,8 +1,8 @@
 services:
   website:
     build: .
-    image: ghcr.io/tucanotechnology/tucanotime-website:latest
-    container_name: tucanotime-website
+    image: ghcr.io/tatuhq/tatutime-website:latest
+    container_name: tatutime-website
     restart: unless-stopped
     environment:
       # ":80" keeps plain HTTP inside the container; put a reverse proxy in
