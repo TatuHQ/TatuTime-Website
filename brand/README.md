@@ -19,8 +19,8 @@ Interim source assets for the TatuHQ identity. The website uses optimised copies
 The mark is pixel art. Always scale it with `image-rendering: pixelated`; do not smooth, recolour,
 crop or add filters to it (Firefox renders a white box behind transformed, filtered pixel art).
 
-The former toucan lockup and its Illustrator source were retired with the TatuHQ rename. They remain
-available in the repository history if the original artwork is ever needed.
+Legacy artwork is intentionally not part of the current identity. Earlier revisions remain in the
+repository history if the original source is ever needed.
 
 TatuHQ, TatuTime and TatuTest are trademarks of TatuHQ. These assets identify the official project
 and must not be used to imply endorsement by another product.
