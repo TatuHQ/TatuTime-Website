@@ -13,6 +13,9 @@ dist/
 # Node is not used by the site; keep stray tooling out.
 node_modules/
 
+__pycache__/
+*.pyc
+
 # Local TLS state if someone runs Caddy outside Docker
 data/
 config/
