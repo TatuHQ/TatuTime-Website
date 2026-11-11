@@ -17,3 +17,13 @@ with the absolute `https://tatutime.com/` origin.
 
 Screenshots of the product itself (`site/assets/img/shot-*.png`) come from a real TatuTime
 instance with a throwaway data directory and fictional demo data. Capture desktop views at 1440×803 and the mobile hero at a narrow portrait width; keep the browser chrome out of the crop.
+After building the product release binary, regenerate the gallery with:
+
+```sh
+python3 tools/capture-product.py --product ../TatuTime
+```
+
+The product's development container supplies Firefox ESR and Python. Mount both
+repositories when running the script there. The capture uses an isolated server,
+fictional customers and a temporary browser profile; it does not read local
+runtime data. Desktop images are 1440x803 and the mobile image is 500x758.
