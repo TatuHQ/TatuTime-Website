@@ -2,7 +2,7 @@
 
 # Static marketing site served by Caddy. No build step, no runtime dependencies
 # beyond the web server.
-FROM caddy:2.11.7-alpine
+FROM caddy:2.11.8-alpine
 
 COPY Caddyfile /etc/caddy/Caddyfile
 COPY site/ /srv/
